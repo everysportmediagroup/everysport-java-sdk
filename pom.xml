@@ -47,10 +47,10 @@
 
 	<dependencies>
 
-        <!-- everysport -->
+        	<!-- everysport -->
 		<dependency>
 			<groupId>com.everysport</groupId>
-			<artifactId>api-commons-core</artifactId>
+			<artifactId>everysport-api-commons-core</artifactId>
 			<version>1.0.1</version>
 		</dependency>
 
