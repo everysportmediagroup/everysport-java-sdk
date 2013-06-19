@@ -2,7 +2,7 @@ This is an official Java client for Everysport API
 
 ## Build and Install
 
-1) Build and install everysport-api-commons-core
+1) Build and install everysport-api-commons-core    
 2) Build and install everysport-java-sdk
 
 ```
