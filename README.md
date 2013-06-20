@@ -43,7 +43,7 @@ EverysportResponse<List<Event>> response = client.getEventRequest().league(59776
  * Get the list of events from the response
  */
 
-List<Event> events = response.getObject();
+List<Event> events = response.getEntity();
 
 for(Event event : events) {
     System.out.println(event.getHomeTeam().getName());
