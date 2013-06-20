@@ -31,7 +31,7 @@ public class ListEventExample {
 
         System.out.println("Upcoming Events");
         System.out.println();
-        for (Event event : response.getObject()) {
+        for (Event event : response.getEntity()) {
             System.out.println("Event #"+event.getId());
             System.out.println(sf.format(event.getStartDate()));
             System.out.println(event.getHomeTeam().getName() + " vs " + event.getVisitingTeam().getName());
@@ -42,7 +42,7 @@ public class ListEventExample {
         response = client.getEventRequest().status(EventStatus.FINISHED).sort("startDate:desc").limit(5).list();
         System.out.println("Finished Events");
         System.out.println();
-        for (Event event : response.getObject()) {
+        for (Event event : response.getEntity()) {
             System.out.println("Event #"+event.getId());
             System.out.println(sf.format(event.getStartDate()));
             System.out.println(event.getHomeTeam().getName() + " vs " + event.getVisitingTeam().getName());
@@ -54,7 +54,7 @@ public class ListEventExample {
         response = client.getNextPage(response);
         System.out.println("Finished Events - Page 2");
         System.out.println();
-        for (Event event : response.getObject()) {
+        for (Event event : response.getEntity()) {
             System.out.println("Event #"+event.getId());
             System.out.println(sf.format(event.getStartDate()));
             System.out.println(event.getHomeTeam().getName() + " vs " + event.getVisitingTeam().getName());

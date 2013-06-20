@@ -20,7 +20,7 @@ public class StandingsExample {
 
         //Get standings for Bowling league with id 55581
         response = client.getStandingsRequest().get(55581);
-        for (Group group : response.getObject()) {
+        for (Group group : response.getEntity()) {
             System.out.println("Group " + group.getLabels().get(0).getName());
             boolean labels = true;
             for(Standings standing : group.getStandings()) {

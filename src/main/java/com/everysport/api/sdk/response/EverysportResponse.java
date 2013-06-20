@@ -9,7 +9,7 @@ public class EverysportResponse<T> {
 
     private AbstractRequest<T> request;
     private String rawBody;
-    private T object;
+    private T entity;
     private Map<String, Object> metadata;
     private Credit credit;
 
@@ -24,12 +24,12 @@ public class EverysportResponse<T> {
         this.rawBody = rawBody;
     }
 
-    public T getObject() {
-        return object;
+    public T getEntity() {
+        return entity;
     }
 
-    public void setObject(T object) {
-        this.object = object;
+    public void setEntity(T entity) {
+        this.entity = entity;
     }
 
     public Map<String, Object> getMetadata() {

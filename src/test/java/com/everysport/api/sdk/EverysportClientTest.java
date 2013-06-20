@@ -27,7 +27,7 @@ public class EverysportClientTest
 
 		EverysportResponse<TestResponse> eventsResponses = genericRequest.<TestResponse, TestResponse>get("/events", TestResponse.class, null);
 
-		Assert.assertNull(eventsResponses.getObject());
+		Assert.assertNull(eventsResponses.getEntity());
 		WireMock.verify(WireMock.getRequestedFor(WireMock.urlEqualTo(expectedUrl)));
 	}
 
@@ -39,7 +39,7 @@ public class EverysportClientTest
 
 		EverysportResponse<TestResponse> eventsResponses = genericRequest.<TestResponse, TestResponse>get("/events", TestResponse.class, "events");
 
-		Assert.assertNotNull(eventsResponses.getObject());
+		Assert.assertNotNull(eventsResponses.getEntity());
 		WireMock.verify(WireMock.getRequestedFor(WireMock.urlEqualTo(expectedUrl)));
 	}
 

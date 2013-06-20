@@ -384,7 +384,7 @@ public class EverysportClient {
                 {
                     try {
                         Method getter = getGetter(request.getType(), request.getProperty());
-                        everysportResponse.setObject((V) getter.invoke(t));
+                        everysportResponse.setEntity((V) getter.invoke(t));
                     } catch (IllegalAccessException|InvocationTargetException|NullPointerException e) {
                         throw new EverysportException("Can not map " + request.getProperty() + " to " + request.getType().getName());
                     }
