@@ -1,4 +1,4 @@
-This is an official Java client for Everysport API
+This is an official Java client for the [Everysport API](https://github.com/menmo/everysport-api-documentation)
 
 ## Build and Install
 
