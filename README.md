@@ -1,12 +1,12 @@
-This is an official Java client for Everysport API
+This is an official Java client for the [Everysport API](https://github.com/menmo/everysport-api-documentation)
 
-## Build and Install
-
-1) Build and install everysport-api-commons-core    
-2) Build and install everysport-java-sdk
-
+## Maven
 ```
-mvn clean install
+<dependency>
+    <groupId>com.everysport</groupId>
+    <artifactId>everysport-java-sdk</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
 
