@@ -6,7 +6,7 @@
 
 	<groupId>com.everysport</groupId>
 	<artifactId>everysport-java-sdk</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
     <name>Everysport Java SDK</name>
@@ -20,9 +20,9 @@
         </license>
     </licenses>
     <scm>
-        <url>git@github.com:menmo/everysport-java-sdk.git</url>
-        <connection>scm:git@github.com:menmo/everysport-java-sdk.git</connection>
-        <developerConnection>scm:git@github.com:menmo/everysport-java-sdk.git</developerConnection>
+        <url>scm:git:git@github.com:menmo/everysport-java-sdk.git</url>
+        <connection>scm:git:git@github.com:menmo/everysport-java-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:menmo/everysport-java-sdk.git</developerConnection>
     </scm>
     <developers>
         <developer>
@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>com.everysport</groupId>
 			<artifactId>everysport-api-commons-core</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.9</version>
 		</dependency>
 
 		<!-- Json -->
@@ -90,6 +90,27 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <executions>
+                  <execution>
+                    <id>sign-artifacts</id>
+                    <phase>verify</phase>
+                    <goals>
+                      <goal>sign</goal>
+                    </goals>
+                  </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4.2</version>
+                <configuration>
+                    <arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -159,6 +180,52 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.4</version>
+                        <configuration>
+                            <passphrase>${gpg.passphrase}</passphrase>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus snapshot repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <name>Sonatype Nexus release repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <!-- Sonatype repo submission stuff -->
     <parent>
