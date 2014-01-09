@@ -5,7 +5,7 @@ This is an official Java client for the [Everysport API](https://github.com/menm
 <dependency>
     <groupId>com.everysport</groupId>
     <artifactId>everysport-java-sdk</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
