@@ -1,11 +1,12 @@
 This is an official Java client for the [Everysport API](https://github.com/menmo/everysport-api-documentation)
 
 ## Maven
+See http://search.maven.org/ for latest version
 ```
 <dependency>
     <groupId>com.everysport</groupId>
     <artifactId>everysport-java-sdk</artifactId>
-    <version>1.0.1</version>
+    <version>${es.sdk.version}</version>
 </dependency>
 ```
 
