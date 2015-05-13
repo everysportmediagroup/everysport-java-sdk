@@ -48,7 +48,6 @@ public class EventRequestTest extends BaseRequestTest {
             methodNames.add(method.getName());
         }
 
-        //Todo Nicer to use Hamcrest and assertThat ... contains ...
         for (String param : availableParams) {
             assertTrue("Missing '" + param +"' as an available parameter.", methodNames.contains(param));
         }
