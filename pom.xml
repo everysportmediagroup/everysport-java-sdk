@@ -4,7 +4,7 @@
 
 	<groupId>com.everysport</groupId>
 	<artifactId>everysport-java-sdk</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.2</version>
 	<packaging>jar</packaging>
 
     <name>Everysport Java SDK</name>
