@@ -341,9 +341,9 @@ public class EverysportClient {
     /**
      * Get stream from request
      *
-     * @param request
+     * @param request HttpUrlConnection
      * @return stream
-     * @throws IOException
+     * @throws IOException http exception
      */
     protected InputStream getStream(HttpURLConnection request)
             throws IOException {
@@ -358,9 +358,9 @@ public class EverysportClient {
     /**
      * Get response from URI and bind to specified type
      *
-     * @param request
+     * @param request AbstractRequest
      * @return response
-     * @throws IOException
+     * @throws IOException API exception
      */
     public <V, T extends ApiBaseResponse> EverysportResponse<V> get(AbstractRequest request) throws IOException {
 

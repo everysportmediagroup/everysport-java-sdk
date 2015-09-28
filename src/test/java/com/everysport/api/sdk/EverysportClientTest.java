@@ -4,7 +4,10 @@ import com.everysport.api.sdk.request.GenericRequest;
 import com.everysport.api.sdk.response.EverysportResponse;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -66,8 +69,8 @@ public class EverysportClientTest
 
 
 		WireMock.verify(1,WireMock.getRequestedFor(WireMock.urlEqualTo("/events?apikey=test"))); //from start
-		WireMock.verify(1, WireMock.getRequestedFor(WireMock.urlEqualTo("/events?limit=2&offset=2&apikey=test"))); //from next
-		WireMock.verify(2, WireMock.getRequestedFor(WireMock.urlEqualTo("/events?limit=2&offset=0&apikey=test"))); //one from previousFromNext and one from previousFromStart
+		WireMock.verify(1, WireMock.getRequestedFor(WireMock.urlEqualTo("/events?offset=2&limit=2&apikey=test"))); //from next
+		WireMock.verify(2, WireMock.getRequestedFor(WireMock.urlEqualTo("/events?offset=0&limit=2&apikey=test"))); //one from previousFromNext and one from previousFromStart
 	}
 
     @Test
