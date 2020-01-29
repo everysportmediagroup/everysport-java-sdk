@@ -129,7 +129,6 @@ public class EverysportClient {
     /**
      * Configure request with standard headers
      *
-     * @param request
      * @return configured request
      */
     protected HttpURLConnection configureConnection(final HttpURLConnection request) {
@@ -142,7 +141,6 @@ public class EverysportClient {
     /**
      * Configure request URI
      *
-     * @param uri
      * @return configured URI
      */
     protected String configureUri(final String uri) {
@@ -152,7 +150,6 @@ public class EverysportClient {
     /**
      * Create connection to URI
      *
-     * @param uri
      * @return connection
      * @throws IOException
      */
@@ -171,8 +168,6 @@ public class EverysportClient {
     /**
      * Create connection to URI
      *
-     * @param uri
-     * @param method
      * @return connection
      * @throws IOException
      */
@@ -186,7 +181,6 @@ public class EverysportClient {
     /**
      * Create a GET request connection to the URI
      *
-     * @param uri
      * @return connection
      * @throws IOException
      */
@@ -197,7 +191,6 @@ public class EverysportClient {
     /**
      * Create a POST request connection to the URI
      *
-     * @param uri
      * @return connection
      * @throws IOException
      */
@@ -208,7 +201,6 @@ public class EverysportClient {
     /**
      * Does status code denote an error
      *
-     * @param code
      * @return true if error, false otherwise
      */
     protected boolean isError(final int code) {
@@ -230,7 +222,6 @@ public class EverysportClient {
     /**
      * Does status code denote a non-error response?
      *
-     * @param code
      * @return true if okay, false otherwise
      */
     protected boolean isOk(final int code) {
@@ -247,9 +238,6 @@ public class EverysportClient {
     /**
      * Create error exception from response and throw it
      *
-     * @param response
-     * @param code
-     * @param status
      * @return non-null newly created {@link IOException}
      */
     protected IOException createException(InputStream response, int code,
@@ -280,8 +268,6 @@ public class EverysportClient {
     /**
      * Send body to output stream of request
      *
-     * @param request
-     * @param body
      * @throws IOException
      */
     protected void sendBody(HttpURLConnection request, String body)
@@ -313,7 +299,6 @@ public class EverysportClient {
     /**
      * Create full URI from path
      *
-     * @param path
      * @return uri
      */
     protected String createUri(final String path) {
@@ -341,7 +326,6 @@ public class EverysportClient {
     /**
      * Get stream from request
      *
-     * @param request
      * @return stream
      * @throws IOException
      */
@@ -358,7 +342,6 @@ public class EverysportClient {
     /**
      * Get response from URI and bind to specified type
      *
-     * @param request
      * @return response
      * @throws IOException
      */
@@ -401,7 +384,6 @@ public class EverysportClient {
     /**
      * Post data to URI
      *
-     * @param <V>
      * @return response
      * @throws IOException
      */

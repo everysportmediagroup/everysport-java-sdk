@@ -42,13 +42,9 @@ public class EverysportException extends IOException {
         return error != null ? formatMessages() : super.getMessage();
     }
 
-    /**
-     * {@see super#getCause()}
-     */
     public Throwable getCause() {
         return this.cause;
     }
-
 
     private String formatMessages() {
 

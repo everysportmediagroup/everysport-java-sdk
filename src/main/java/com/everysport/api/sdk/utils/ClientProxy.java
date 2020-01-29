@@ -4,10 +4,6 @@ public class ClientProxy {
     private String host;
     private int port;
 
-    /**
-     * @param host
-     * @param port
-     */
     public ClientProxy(String host, int port) {
         this.host = host;
         this.port = port;

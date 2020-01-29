@@ -100,6 +100,7 @@
                     <source>1.7</source>
                     <target>1.7</target>
                     <encoding>UTF-8</encoding>
+                    <executable>${java.home}/../bin/javac</executable>
                 </configuration>
             </plugin>
             <plugin>
@@ -133,6 +134,7 @@
                     <windowtitle>Everysport Java</windowtitle>
                     <doctitle><![CDATA[<h1>Everysport Java</h1>]]></doctitle>
                     <bottom><![CDATA[<i>Copyright &#169; 2013 Everysport. All Rights Reserved.</i>]]></bottom>
+                    <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
                 </configuration>
                 <executions>
                     <execution>
